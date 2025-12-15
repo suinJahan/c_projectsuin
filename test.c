@@ -45,10 +45,30 @@ int test_show_appointment()
     return expected == actual;
 }
 
+
+int test_patient_report_count()
+{
+    struct Patient p;
+    p.report_count = 0;
+
+    strcpy(p.reports[p.report_count++], "Xray");
+
+    int expected = 1;
+    int actual = p.report_count;
+
+    printf("\n[Test Patient Report Count] expected: %d, actual: %d, success: %d\n",
+           expected, actual, expected == actual);
+
+    return expected == actual;
+}
+
+
 int main()
 {
+    test_patient_report_count();
     test_show_appointment();
     test_authenticate_fail();
     test_authenticate_success();
 }
+
 

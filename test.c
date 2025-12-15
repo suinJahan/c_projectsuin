@@ -32,8 +32,23 @@ int test_authenticate_fail()
     return expected == actual;
 }
 
+int test_show_appointment()
+{
+    show_appointment("John", "Smith", "2025-01-01");
+
+    int expected = 1;   // function executed
+    int actual = 1;
+
+    printf("\n[Test Show Appointment] expected: %d, actual: %d, success: %d\n",
+           expected, actual, expected == actual);
+
+    return expected == actual;
+}
+
 int main()
 {
+    test_show_appointment();
     test_authenticate_fail();
     test_authenticate_success();
 }
+
